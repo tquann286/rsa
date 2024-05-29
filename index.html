@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>RSA Signature</title>
+        <link
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="container mt-5">
+            <h1 class="text-center mb-4">Digital Signatures RSA</h1>
+            <div class="input-fields">
+                <div class="form-group">
+                    <label for="messageInput">Plaintext M: </label>
+                    <input
+                        type="text"
+                        class="form-control uppercase-input"
+                        id="messageInput"
+                        placeholder="Enter Plaintext"
+                    />
+                </div>
+                <div class="prime">
+                    <div class="form-group">
+                        <label for="pInput">Prime p: </label>
+                        <input
+                            type="number"
+                            class="form-control"
+                            id="pInput"
+                            placeholder="Enter p"
+                        />
+                    </div>
+                    <div class="form-group">
+                        <label for="qInput">Prime q: </label>
+                        <input
+                            type="number"
+                            class="form-control"
+                            id="qInput"
+                            placeholder="Enter q"
+                        />
+                    </div>
+                </div>
+            </div>
+            <div class="message mt-4">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="asciiTable">
+                        <thead>
+                            <tr id="messageRow"></tr>
+                            <tr id="asciiRow"></tr>
+                            <tr id="encryptedRow"></tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+            <div class="footer">
+                <div class="result mt-4">
+                    <span id="result">Signature: </span>
+                </div>
+                <button
+                    class="btn btn-primary mt-4"
+                    onclick="generateSignature()"
+                >
+                    Generate
+                </button>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>
