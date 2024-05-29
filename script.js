@@ -21,7 +21,9 @@ function generateSignature() {
     const encryptedValues = asciiValues.map((value) => modExp(value, d, n));
     displayEncryptedTable(message, encryptedValues);
 
-    document.getElementById("result").innerText = Signature: 326; // Giữ nguyên giá trị signature
+    const messageAscii = asciiValues.join("");
+    const signature = modExp(messageAscii, d, n);
+    document.getElementById("result").innerText = `Chữ ký số: ${signature}`;
 }
 
 function displayAsciiTable(message, asciiValues) {
